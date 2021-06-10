@@ -23,7 +23,7 @@ function askQuestion() {
 
 for (i=0; i < questions.length+1; i++) {
   candidateAnswers[i] = input.question(questions[i]);
-  if (candidateAnswers[i] === correctAnswers[i]) {
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
         console.log(`Woo hoo! You are correct. Your answer of ${candidateAnswers[i]} is the same as our correct answer ${correctAnswers[i]}`);
   } else {
     console.log(`Sorry! Your answer of ${candidateAnswers[i]} is incorrect. The correct answer is ${correctAnswers[i]}`);
