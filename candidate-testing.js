@@ -8,9 +8,11 @@ let candidateName = " ";
 let question = "Who was the first woman in space? ";
 let correctAnswer;
 let candidateAnswer;
-let questions = ["Who was the first American woman in space?", "True or False: 5 kilometer == 5000 meters?", "(5 + 3)/2 * 10?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let questions = ["1) Who was the first American woman in space? ", "2) True or False: 5 kilometer == 5000 meters? ", "3) (5 + 3)/2 * 10? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
+let point = 0;
+let grade = 0;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -21,38 +23,34 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-for (i=0; i < questions.length+1; i++) {
-  candidateAnswers[i] = input.question(questions[i]);
-  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+  for (i=0; i < question.length; i++) {
+    candidateAnswers[i] = input.question(questions[i]);
+
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
         console.log(`Woo hoo! You are correct. Your answer of ${candidateAnswers[i]} is the same as our correct answer ${correctAnswers[i]}`);
-  } else {
-    console.log(`Sorry! Your answer of ${candidateAnswers[i]} is incorrect. The correct answer is ${correctAnswers[i]}`);
-  }
-  };
+        point += 1;
+        console.log(point);
+    } else {
+        point += 0;
+        console.log(point);
+        console.log(`Sorry! Your answer of ${candidateAnswers[i]} is incorrect. The correct answer is ${correctAnswers[i]}`);
+  }; 
 };
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-    if (candidateAnswer[i] === correctAnswer[i] ) {
-      console.log("Woo hoo! You are correct!");
-    } else {
-      console.log("Not quite! Try again.")
-    }
-
-  let grade;
-  
-
-  return grade;
+  grade = (point / 5)*100
+  console.log(grade)
+return grade  
 }
 
 function runProgram() {
-  askForName();
-  // TODO 1.1c: Ask for candidate's name //
-  
+  askForName();  
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
+
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
