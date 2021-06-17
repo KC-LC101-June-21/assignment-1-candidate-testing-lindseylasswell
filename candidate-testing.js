@@ -27,13 +27,11 @@ function askQuestion() {
     candidateAnswers[i] = input.question(questions[i]);
 
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-        console.log(`Woo hoo! You are correct. Your answer of ${candidateAnswers[i]} is the same as our correct answer ${correctAnswers[i]}`);
+        console.log(`Your answer: ${candidateAnswers[i]} \nCorrect answer: ${correctAnswers[i]}`);
         point += 1;
-        console.log(point);
     } else {
         point += 0;
-        console.log(point);
-        console.log(`Sorry! Your answer of ${candidateAnswers[i]} is incorrect. The correct answer is ${correctAnswers[i]}`);
+        console.log(`Your answer: ${candidateAnswers[i]} \nCorrect answer: ${correctAnswers[i]}`);
   }; 
 };
 }
