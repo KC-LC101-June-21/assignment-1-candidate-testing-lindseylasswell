@@ -41,7 +41,12 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   grade = (point / 5)*100
-  console.log(`grade)
+  console.log(`Overall Grade: ${grade}%`);
+  if (grade >= 80) {
+    console.log(`Status: Passed`);
+  } else {
+    console.log(`Status: Failed`);
+  }
 return grade  
 }
 
